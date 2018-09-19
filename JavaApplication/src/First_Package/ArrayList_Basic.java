@@ -24,6 +24,7 @@ public class ArrayList_Basic {
         for(int x : nums){
             System.out.print(x+" ");
         }
+        int cool=nums.get(0);
         
         nums.clear();
         System.out.println("\n\nNew Print Data");

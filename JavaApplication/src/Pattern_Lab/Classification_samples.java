@@ -32,6 +32,16 @@ public class Classification_samples {
         System.out.println("Floor : "+floor+"   Ceil : "+ceil);
         
         //Work
+        int countA=0;
+        for(int i=0;i<numA;i++){
+            if(arA.get(i)>=floor && arA.get(i)<=ceil) countA+=1;
+        }
+        System.out.println("Count Class A : "+countA);
+        int countB=0;
+        for(int i=0;i<numB;i++){
+            if(arA.get(i)>=floor && arA.get(i)<=ceil) countB+=1;
+        }
+        System.out.println("Count Class B : "+countB);
         
         System.out.println("\n-------------ENDED------------\n");
     }
