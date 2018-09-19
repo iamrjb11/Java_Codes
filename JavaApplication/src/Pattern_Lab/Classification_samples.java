@@ -49,6 +49,21 @@ public class Classification_samples {
         }
         System.out.println("p("+target+"|B) : "+countB+"/"+numB);
         
+        //Using Bayes Theorem
+        System.out.println("\nUsing Bayes Theorem :");
+        double pclassA,pclassB;
+        double totalA,totalB;
+        totalA=pA*( ((double)countA) / ((double)numA) );
+        //System.out.println("->>" +totalA);
+        totalB=pB*( ((double)countB) / ((double)numB) );
+        pclassA=totalA / (totalA+totalB);
+        pclassB=totalB / (totalA+totalB);
+        System.out.println("P(A|"+target+") : "+pclassA);
+        System.out.println("P(B|"+target+") : "+pclassB);
+        System.out.println("\nDecision :");
+        if(pclassA>pclassB) System.out.println("The sample should be classified into class A");
+        else System.out.println("The sample should be classified into class B");
+        
         
         System.out.println("\n-------------ENDED------------\n");
     }
