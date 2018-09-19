@@ -5,7 +5,12 @@ public class Pelindrome {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter any integer number : ");
-        int num=input.nextInt();
+        int num,save_num;
+        num=input.nextInt();
+        
+        while(true){
+            
+        }
         
         
     }
