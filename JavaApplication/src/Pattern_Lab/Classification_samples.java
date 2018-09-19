@@ -4,10 +4,16 @@ import java.util.*;
 public class Classification_samples {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int numA,numB;
+        
         ArrayList<Double> arA=new ArrayList<>();
         ArrayList<Double> arB=new ArrayList<>();
+        double pA,pB;
+        System.out.print("Enter P(A) : ");
+        pA=input.nextDouble();
         
+        System.out.print("Enter P(B) : ");
+        pB=input.nextDouble();
+        int numA,numB;
         System.out.print("Number of samples in Class A : ");
         numA=input.nextInt();
         System.out.print("Class A : ");
@@ -20,28 +26,29 @@ public class Classification_samples {
         for(int i=0;i<numB;i++){
             arB.add( input.nextDouble() );
         }
-        System.out.println("Class A : "+arA);
-        System.out.println("Class B : "+arB);
+        //System.out.println("Class A : "+arA);
+        //System.out.println("Class B : "+arB);
         
         double target;
-        System.out.print("Enter target sample value : ");
+        System.out.print("\nEnter target sample value : ");
         target=input.nextDouble();
         int floor,ceil;
         floor=(int)target;
         ceil=floor+1;
-        System.out.println("Floor : "+floor+"   Ceil : "+ceil);
+        System.out.println("\nRange : "+floor+" - "+ceil);
         
         //Work
         int countA=0;
         for(int i=0;i<numA;i++){
             if(arA.get(i)>=floor && arA.get(i)<=ceil) countA+=1;
         }
-        System.out.println("Count Class A : "+countA);
+        System.out.println("p("+target+"|A) : "+countA+"/"+numA);
         int countB=0;
         for(int i=0;i<numB;i++){
-            if(arA.get(i)>=floor && arA.get(i)<=ceil) countB+=1;
+            if(arB.get(i)>=floor && arB.get(i)<=ceil) countB+=1;
         }
-        System.out.println("Count Class B : "+countB);
+        System.out.println("p("+target+"|B) : "+countB+"/"+numB);
+        
         
         System.out.println("\n-------------ENDED------------\n");
     }
