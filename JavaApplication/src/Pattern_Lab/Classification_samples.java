@@ -1,20 +1,24 @@
 package Pattern_Lab;
 import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Classification_samples {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
+        File file = new File("E:/Java/NetBeansProjects/JavaApplication/src/Pattern_Lab/input.txt");
+        
         
         ArrayList<Double> arA=new ArrayList<>();
         ArrayList<Double> arB=new ArrayList<>();
         double pA,pB;
-        System.out.print("Enter P(A) : ");
-        pA=input.nextDouble();
+        //System.out.print("Enter P(A) : ");
+        //pA=input.nextDouble();
         
-        System.out.print("Enter P(B) : ");
-        pB=input.nextDouble();
+        //System.out.print("Enter P(B) : ");
+        //pB=input.nextDouble();
         int numA,numB;
-        System.out.print("Number of samples in Class A : ");
+        /*System.out.print("Number of samples in Class A : ");
         numA=input.nextInt();
         System.out.print("Class A : ");
         for(int i=0;i<numA;i++){
@@ -25,13 +29,30 @@ public class Classification_samples {
         System.out.print("Class B : ");
         for(int i=0;i<numB;i++){
             arB.add( input.nextDouble() );
-        }
+        } */
         //System.out.println("Class A : "+arA);
         //System.out.println("Class B : "+arB);
         
         double target;
         System.out.print("\nEnter target sample value : ");
         target=input.nextDouble();
+        
+       
+        Scanner inputFile = new Scanner(file);
+
+        pA = Double.parseDouble(inputFile.next());
+        pB = Double.parseDouble(inputFile.next());
+        numA = Integer.parseInt(inputFile.next());
+        for(int i=0;i<numA;i++){
+            arA.add( Double.parseDouble(inputFile.next()) );
+        }
+        
+        numB = Integer.parseInt(inputFile.next());
+        for(int i=0;i<numB;i++){
+            arB.add( Double.parseDouble(inputFile.next()) );
+        }
+        
+        
         int floor,ceil;
         floor=(int)target;
         ceil=floor+1;
