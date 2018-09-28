@@ -8,13 +8,18 @@ public class Single_Linkage_Algorithm {
         File file = new File("D:/Java/NetBeansProjects/JavaApplication/src/Pattern_Lab/clustering.txt");
         Scanner inputFile = new Scanner(file);
         
-        ArrayList<Double> arA=new ArrayList<>();
-        ArrayList<Double> arB=new ArrayList<>();
+        ArrayList<Double> arX=new ArrayList<>();
+        ArrayList<Double> arY=new ArrayList<>();
         int numOfsample;
         numOfsample = Integer.parseInt(inputFile.next());
         for(int i=0;i<numOfsample;i++){
-            
+            arX.add( Double.parseDouble(inputFile.next()) );
+            arY.add( Double.parseDouble(inputFile.next()) );
         }
+        /*for(int i=0;i<numOfsample;i++){
+            System.out.print(""+arX.get(i)+" ");
+            System.out.println(""+arY.get(i)+" ");
+        }*/
         
         
         
